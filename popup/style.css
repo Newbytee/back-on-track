@@ -1,0 +1,15 @@
+body {
+    padding-left: 20px;
+    font-family: sans-serif;
+}
+
+#window {
+    width: 350px;
+    height: 500px;
+}
+
+#webpageList {
+    resize: none;
+    height: 360px;
+    width: 250px;
+}
