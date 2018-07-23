@@ -19,7 +19,7 @@ function createPopup() {
 
 function loadList(item) {
     for (var i = 0; i < item.urls.length; i++) {
-        if (item.urls[i] === window.location.host) {
+        if (item.urls[i] === window.location.host || "www." + item.urls[i] === window.location.host) {
             console.log("hi");
             createPopup();
         }
