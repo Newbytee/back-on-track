@@ -1,14 +1,14 @@
 if (typeof browser === "undefined") {
-    var browser = chrome;
+    const browser = chrome;
 }
 
 browser.storage.sync.get("urls").then(loadList, gotError);
 
 function createPopup() {
-    var backOnTrackPopup = document.createElement("DIV");
-    var backOnTrackPopupText = document.createElement("P");
-    var backOnTrackPopupTextArea = document.createElement("TEXTAREA");
-    var backOnTrackPopupButton = document.createElement("BUTTON");
+    const backOnTrackPopup = document.createElement("DIV");
+    const backOnTrackPopupText = document.createElement("P");
+    const backOnTrackPopupTextArea = document.createElement("TEXTAREA");
+    const backOnTrackPopupButton = document.createElement("BUTTON");
     backOnTrackPopup.style.height = "400px";
     backOnTrackPopup.style.width = "400px";
     backOnTrackPopup.style.backgroundColor = "#FFF9F8";
@@ -33,7 +33,7 @@ function createPopup() {
 }
 
 function loadList(item) {
-    for (var i = 0; i < item.urls.length; i++) {
+    for (let i = 0; i < item.urls.length; i++) {
         if (item.urls[i] === window.location.host || "www." + item.urls[i] === window.location.host) {
             createPopup();
         }

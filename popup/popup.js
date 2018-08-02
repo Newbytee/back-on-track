@@ -4,7 +4,7 @@ if (typeof browser === "undefined") {
     document.getElementById("webpageList").value = "browser.storage API not available.";
 }
 
-var websiteList = document.getElementById("webpageList");
+const websiteList = document.getElementById("webpageList");
 
 browser.storage.sync.get("urls").then(loadList, gotError);
 
@@ -13,7 +13,7 @@ websiteList.addEventListener("blur", updateList);
 document.getElementById("buttonUpdate").addEventListener("onclick", updateList);
 
 function updateList() {
-    var websites = (websiteList.value).split("\n");
+    const websites = (websiteList.value).split("\n");
 
     browser.storage.sync.set({
         urls: websites
@@ -21,7 +21,7 @@ function updateList() {
 }
 
 function loadList(item) {
-    for (var i = 0; i < item.urls.length; i++) {
+    for (let i = 0; i < item.urls.length; i++) {
         websiteList.append(item.urls[i]);
         if (i < item.urls.length - 1) {
             websiteList.append("\n");
