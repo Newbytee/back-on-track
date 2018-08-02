@@ -1,3 +1,9 @@
+// noinspection JSAnnotator
+// noinspection JSAnnotator
+if (typeof browser === "undefined") {
+    document.getElementById("webpageList").value = "browser.storage API not available.";
+}
+
 var websiteList = document.getElementById("webpageList");
 
 browser.storage.sync.get("urls").then(loadList, gotError);

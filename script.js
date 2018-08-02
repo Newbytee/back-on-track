@@ -1,21 +1,33 @@
+if (typeof browser === "undefined") {
+    var browser = chrome;
+}
+
 browser.storage.sync.get("urls").then(loadList, gotError);
 
 function createPopup() {
     var backOnTrackPopup = document.createElement("DIV");
     var backOnTrackPopupText = document.createElement("P");
     var backOnTrackPopupTextArea = document.createElement("TEXTAREA");
+    var backOnTrackPopupButton = document.createElement("BUTTON");
     backOnTrackPopup.style.height = "400px";
     backOnTrackPopup.style.width = "400px";
-    backOnTrackPopup.style.backgroundColor = "#FF00FF";
+    backOnTrackPopup.style.backgroundColor = "#FFF9F8";
     backOnTrackPopup.style.zIndex = "100";
     backOnTrackPopup.style.position = "fixed";
     backOnTrackPopup.style.top = "50px";
     backOnTrackPopup.style.left = "50%";
     backOnTrackPopup.style.marginLeft = "-200px";
+    backOnTrackPopup.style.boxShadow = "1px 1px 15px 5px #333333AA";
     backOnTrackPopupText.innerHTML = "Why are you visiting this website?";
     backOnTrackPopupText.style.textAlign = "center";
+    backOnTrackPopupTextArea.style.width = "96%";
+    backOnTrackPopupTextArea.style.height = "72%";
+    backOnTrackPopupTextArea.style.border = "none";
+    backOnTrackPopupButton.innerHTML = "Submit";
+    backOnTrackPopupButton.style.marginTop = "2.4%";
     backOnTrackPopup.appendChild(backOnTrackPopupText);
     backOnTrackPopup.appendChild(backOnTrackPopupTextArea);
+    backOnTrackPopup.appendChild(backOnTrackPopupButton);
     document.body.appendChild(backOnTrackPopup);
     console.log("Script was run successfully");
 }
