@@ -1,5 +1,3 @@
-// noinspection JSAnnotator
-// noinspection JSAnnotator
 if (typeof browser === "undefined") {
     document.getElementById("webpageList").value = "browser.storage API not available.";
 }
